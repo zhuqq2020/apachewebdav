@@ -21,7 +21,7 @@ When using unencrypted HTTP, use `Digest` authentication (instead of `Basic`) to
 ```
 docker run -d --restart always -e 'AUTH_TYPE'='Digest' -e 'USERNAME'='alice' -e 'PASSWORD'='mypassword' \
     -v '/mnt/webdav':'/var/lib/dav/data':'rw' -v '/mnt/appdata':'/var/lib/dav':'rw' \
-    -p '80:80' 'apachewebdav/apachewebdav'
+    -p '80:80' 'spgcc/apachewebdav'
 ```
 
 #### Via Docker Compose:
@@ -30,7 +30,7 @@ docker run -d --restart always -e 'AUTH_TYPE'='Digest' -e 'USERNAME'='alice' -e 
 version: '3'
 services:
   webdav:
-    image: apachewebdav/apachewebdav
+    image: spgcc/apachewebdav
     restart: always
     ports:
       - "80:80"
@@ -50,7 +50,7 @@ We recommend you use a reverse proxy (eg, Nginx Proxy Manager) to handle SSL cer
 ```
 docker run -d --restart always -e 'AUTH_TYPE'='Digest' -e 'USERNAME'='alice' -e 'PASSWORD'='mypassword' \
     -v '/mnt/webdav':'/var/lib/dav/data':'rw' -v '/mnt/appdata':'/var/lib/dav':'rw' \
-    -e SSL_CERT=selfsigned -p '80:80' 'apachewebdav/apachewebdav'
+    -e SSL_CERT=selfsigned -p '80:80' 'spgcc/apachewebdav'
 ```
 
 If you bind mount a certificate chain to `/cert.pem` and a private key to `/privkey.pem`, the container will use that instead!
