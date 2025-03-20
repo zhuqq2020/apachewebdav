@@ -4,6 +4,13 @@ FROM httpd:2.4.43-alpine
 # ENV HTTPD_PREFIX /usr/local/apache2
 # WORKDIR "$HTTPD_PREFIX"
 
+# 安装 tzdata 包以支持时区设置
+RUN apk add --no-cache tzdata
+
+# These variables are inherited from the httpd:alpine image:
+# ENV HTTPD_PREFIX /usr/local/apache2
+# WORKDIR "$HTTPD_PREFIX"
+
 # Copy in our configuration files.
 COPY conf/ conf/
 
