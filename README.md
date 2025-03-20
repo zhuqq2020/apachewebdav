@@ -1,3 +1,5 @@
+原作者https://github.com/mgutt/docker-apachewebdav的基础上添加了tzdata 包以支持时区TZ变量的设置
+
 ## Project
 [apachewebdav/apachewebdav](https://github.com/mgutt/docker-apachewebdav) is based on [bytemark/webdav](https://github.com/BytemarkHosting/docker-webdav) including different pull requests:
 - [Fix non-ASCII filenames](https://github.com/BytemarkHosting/docker-webdav/pull/20)
